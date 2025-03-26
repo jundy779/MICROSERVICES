@@ -1,0 +1,13 @@
+appName: currencyservice
+appImage: gcr.io/google-samples/microservices-demo/currencyservice
+appVersion: v0.10.0
+appReplicas: 2
+containerPort: 7000
+containerEnvVars:
+- name: PORT
+  value: "8080"
+- name: REDIS_ADDR
+  value: "redis-cart:6379"
+
+serviceType: ClusterIP
+servicePort: 7000

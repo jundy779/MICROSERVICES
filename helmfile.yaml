@@ -34,7 +34,7 @@ releases:
   - name: productcatalogservice
     chart: charts/microservice
     values:
-      - values/product-catalog-service-values.yaml
+      - values/productcatalog-service-values.yaml
   
   - name: shippingservice
     chart: charts/microservice
@@ -54,4 +54,4 @@ releases:
   - name: frontendservice
     chart: charts/microservice
     values:
-      - values/frontend-service-values.yaml
+      - values/frontend-values.yaml
