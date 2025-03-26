@@ -4,8 +4,8 @@ appVersion: v0.10.0
 appReplicas: 2
 containerPort: 50051
 containerEnvVars:
-- name: PORT
-  value: "50051"
+  - name: PORT
+    value: "50051"
 
 serviceType: ClusterIP
 servicePort: 50051

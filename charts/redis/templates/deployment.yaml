@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName}}
+  name: { { .Values.appName } }
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: { { .Values.replicas } }
   selector:
     matchLabels:
-      app: {{ .Values.appName }}
+      app: { { .Values.appName } }
   template:
     metadata:
       labels:
-        app: {{ .Values.appName }}
+        app: { { .Values.appName } }
     spec:
       containers:
-      - name: {{ .Values.appName }}
-        image: "{{ .Values.appImage }}:{{ .Values.appVersion }}"
-        ports:
-        - containerPort: {{ .Values.containerPort}}
-        volumeMounts:
-        - name: {{ .Values.volumeName }}
-          mountPath: {{ .Values.containerMountPath }} # Gunakan variabel yang benar
+        - name: { { .Values.appName } }
+          image: "{{ .Values.appImage }}:{{ .Values.appVersion }}"
+          ports:
+            - containerPort: { { .Values.containerPort } }
+          volumeMounts:
+            - name: { { .Values.volumeName } }
+              mountPath: { { .Values.containerMountPath } } # Gunakan variabel yang benar
       volumes:
-      - name: {{ .Values.volumeName }}
-        emptyDir: {}
+        - name: { { .Values.volumeName } }
+          emptyDir: {}
