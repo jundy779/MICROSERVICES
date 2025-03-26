@@ -13,15 +13,7 @@ spec:
     spec:
       containers:
       - name: emailservice
-<<<<<<< HEAD
-<<<<<<< HEAD
         image: gcr.io/google-samples/microservices-demo/emailservice:v0.10.0
-=======
-        image: gcr.io/google-sample/microservices-demo/emailservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
-=======
-        image: gcr.io/google-sample/microservices-demo/emailservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
         ports:
         - containerPort: 8080
         env:
@@ -57,15 +49,7 @@ spec:
     spec:
       containers:
       - name: recommendationservice
-<<<<<<< HEAD
-<<<<<<< HEAD
         image: gcr.io/google-samples/microservices-demo/recommendationservice:v0.8.0
-=======
-        image: gcr.io/google-sample/microservices-demo/recommendationservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
-=======
-        image: gcr.io/google-sample/microservices-demo/recommendationservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
         ports:
           - containerPort: 8080
         env:
@@ -101,15 +85,7 @@ spec:
     spec:
       containers:
         - name: paymentservice
-<<<<<<< HEAD
-<<<<<<< HEAD
           image: gcr.io/google-samples/microservices-demo/paymentservice:v0.8.0
-=======
-          image: gcr.io/google-sample/microservices-demo/paymentservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
-=======
-          image: gcr.io/google-sample/microservices-demo/paymentservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
           ports:
             - containerPort: 50051
           env:
@@ -146,15 +122,7 @@ spec:
     spec:
       containers:
         - name: productcatalogservice
-<<<<<<< HEAD
-<<<<<<< HEAD
           image: gcr.io/google-samples/microservices-demo/productcatalogservice:v0.8.0
-=======
-          image: gcr.io/google-sample/microservices-demo/productcatalogservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
-=======
-          image: gcr.io/google-sample/microservices-demo/productcatalogservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
           ports:
             - containerPort: 3350
           env:
@@ -200,15 +168,7 @@ spec:
     spec:
       containers:
         - name: currencyservice
-<<<<<<< HEAD
-<<<<<<< HEAD
           image: gcr.io/google-samples/microservices-demo/currencyservice:v0.8.0
-=======
-          image: gcr.io/google-sample/microservices-demo/currencyservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
-=======
-          image: gcr.io/google-sample/microservices-demo/currencyservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
           ports:
             - containerPort: 7000
           env:
@@ -245,15 +205,7 @@ spec:
     spec:
       containers:
         - name: shippingservice
-<<<<<<< HEAD
-<<<<<<< HEAD
           image: gcr.io/google-samples/microservices-demo/shippingservice:v0.8.0
-=======
-          image: gcr.io/google-sample/microservices-demo/shippingservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
-=======
-          image: gcr.io/google-sample/microservices-demo/shippingservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
           ports:
             - containerPort: 50051
           env:
@@ -289,15 +241,7 @@ spec:
     spec:
       containers:
         - name: adservice
-<<<<<<< HEAD
-<<<<<<< HEAD
           image: gcr.io/google-samples/microservices-demo/adservice:v0.8.0
-=======
-          image: gcr.io/google-sample/microservices-demo/adservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
-=======
-          image: gcr.io/google-sample/microservices-demo/adservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
           ports:
             - containerPort: 9555
           env:
@@ -333,15 +277,7 @@ spec:
     spec:
       containers:
         - name: cartservice
-<<<<<<< HEAD
-<<<<<<< HEAD
           image: gcr.io/google-samples/microservices-demo/cartservice:v0.8.0
-=======
-          image: gcr.io/google-sample/microservices-demo/cartservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
-=======
-          image: gcr.io/google-sample/microservices-demo/cartservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
           ports:
             - containerPort: 7070
           env:
@@ -379,15 +315,7 @@ spec:
     spec:
       containers:
         - name: checkoutservice
-<<<<<<< HEAD
-<<<<<<< HEAD
           image: gcr.io/google-samples/microservices-demo/checkoutservice:v0.8.0
-=======
-          image: gcr.io/google-sample/microservices-demo/checkoutservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
-=======
-          image: gcr.io/google-sample/microservices-demo/checkoutservice:v0.10.2
->>>>>>> a8cf8c9251bacc21fdd9aa580f263bafc8c13b4a
           ports:
             - containerPort: 5050
           env:
