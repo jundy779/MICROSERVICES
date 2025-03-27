@@ -1,53 +1,64 @@
-Helm Deployment for Microservices in Kubernetes
+# Helm Deployment for Microservices in Kubernetes
 
 This repository contains Helm charts for deploying microservices in a Kubernetes cluster using Minikube.
-Prerequisites
+
+## Prerequisites
 
 Ensure you have the following installed:
 
-    Minikube
-    Helm
-    Homebrew (For macOS users)
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+- [Helm](https://helm.sh/docs/intro/install/)
+- [Homebrew](https://brew.sh/) (For macOS users)
 
-Setup Instructions
-1. Start Minikube
+## Setup Instructions
 
+### 1. Start Minikube
+```sh
 minikube start
+```
 
-2. Expose the Frontend Service
-
+### 2. Expose the Frontend Service
+```sh
 minikube service frontend
+```
 
-3. Install Helm (if not already installed)
-
+### 3. Install Helm (if not already installed)
+```sh
 brew install helm
+```
 
-4. Sync Helm dependencies
-
+### 4. Sync Helm dependencies
+```sh
 helm dependency update
+```
 
-5. List Installed Helm Releases
-
+### 5. List Installed Helm Releases
+```sh
 helm ls
+```
 
-6. Install a Service (Example: Email Service)
-
+### 6. Install a Service (Example: Email Service)
+```sh
 helm install -f values/emailservice-values.yaml emailservice charts/microservice
+```
 
-7. Validate Helm Templates
-
+### 7. Validate Helm Templates
+```sh
 helm template -f values/redis-values.yaml charts/redis
+```
 
-8. Perform a Dry Run Before Installing (Example: Redis Service)
-
+### 8. Perform a Dry Run Before Installing (Example: Redis Service)
+```sh
 helm install --dry-run -f values/redis-values.yaml charts/redis
+```
 
-9. Lint Helm Files (Validate YAML Configuration)
-
+### 9. Lint Helm Files (Validate YAML Configuration)
+```sh
 helm lint -f values.yaml
+```
 
-Project Structure
-
+## Project Structure
+```
 charts/               # Contains Helm charts
   ├── microservice/   # Microservice Helm chart
   │   ├── Chart.yaml
@@ -83,12 +94,11 @@ values/              # Contains values files for Helm charts
   ├── shippingservice-values.yaml
 config.yaml          # Configuration file
 helmfile.yaml        # Helmfile for managing releases
+```
 
-Notes
-
-    Replace charts/microservice and charts/redis with the appropriate chart paths.
-    Ensure that the correct values files are passed during installation.
-    Use helm upgrade --install instead of helm install if you want to apply updates.
+## Notes
+- Replace `charts/microservice` and `charts/redis` with the appropriate chart paths.
+- Ensure that the correct values files are passed during installation.
+- Use `helm upgrade --install` instead of `helm install` if you want to apply updates.
 
 Happy Deploying! "FUSIONIFY ID"
-
