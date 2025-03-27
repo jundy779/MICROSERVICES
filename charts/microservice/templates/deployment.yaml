@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName}}
+  name: {{ .Values.appName }}
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: {{ .Values.appReplicas }}
   selector:
     matchLabels:
       app: {{ .Values.appName }}
@@ -16,9 +16,12 @@ spec:
       - name: {{ .Values.appName }}
         image: "{{ .Values.appImage }}:{{ .Values.appVersion }}"
         ports:
-        - containerPort: {{ .Values.containerPort}}
-        env:
+        - containerPort: {{ .Values.containerPort }}
+
+        env: 
         {{- range .Values.containerEnvVars }}
-        - name: {{ .name }}
-          value: {{ .Value | quote }}
+        - name: {{ .name}}
+          value: {{ .value | quote }}
         {{- end }}
+
+

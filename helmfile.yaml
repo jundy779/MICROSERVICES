@@ -21,15 +21,15 @@ releases:
     values:
       - values/currency-service-values.yaml
 
-  - name: paymentservices
+  - name: paymentservice
     chart: charts/microservice
     values:
-      - values/payment-service-values.yaml
+      - values/paymentservice-values.yaml
 
   - name: recommendationservice
     chart: charts/microservice
     values:
-      - values/recommendation-service-values.yaml
+      - values/recommendationservice-values.yaml
 
   - name: productcatalogservice
     chart: charts/microservice
@@ -39,7 +39,7 @@ releases:
   - name: shippingservice
     chart: charts/microservice
     values:
-      - values/shipping-service-values.yaml
+      - values/shippingservice-values.yaml
 
   - name: adservice
     chart: charts/microservice
@@ -49,7 +49,7 @@ releases:
   - name: checkoutservice
     chart: charts/microservice
     values:
-      - values/checkout-service-values.yaml
+      - values/checkoutservice-values.yaml
 
   - name: frontendservice
     chart: charts/microservice

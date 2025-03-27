@@ -55,6 +55,10 @@ spec:
           env:
             - name: PORT
               value: "8080"
+            - name: DISABLE_PROFILER # add this line
+              value: "1" # add this line
+            - name: PRODUCT_CATALOG_SERVICE_ADDR # tambahkan baris ini
+              value: "productcatalogservice:3550" # tambahkan baris ini
 ---
 apiVersion: v1
 kind: Service
@@ -111,6 +115,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productcatalogservice
+  namespace: microservices
 spec:
   selector:
     matchLabels:
@@ -124,21 +129,33 @@ spec:
         - name: productcatalogservice
           image: gcr.io/google-samples/microservices-demo/productcatalogservice:v0.8.0
           ports:
-            - containerPort: 3350
+            - containerPort: 3550
           env:
             - name: PORT
-              value: "3350"
+              value: "3550"
             - name: DISABLE_PROFILER
               value: "1"
+            - name: ENABLE_STACKDRIVER_PROFILER
+              value: "false"
           livenessProbe:
-            httpGet:
-              path: /health
+            tcpSocket:
               port: 3550
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
             periodSeconds: 5
           readinessProbe:
-            grpc:
+            tcpSocket:
               port: 3550
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
             periodSeconds: 5
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "200m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
@@ -151,7 +168,7 @@ spec:
   ports:
     - protocol: TCP
       port: 3550
-      targetPort: 3350
+      targetPort: 3550
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -246,6 +263,10 @@ spec:
           env:
             - name: PORT
               value: "9555"
+            - name: DISABLE_AUTH
+              value: "true"
+            - name: ENABLE_STACKDRIVER_EXPORTER
+              value: "false"
 ---
 apiVersion: v1
 kind: Service
